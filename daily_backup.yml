@@ -3,7 +3,7 @@
     vars: 
      - backup_path: "/git/github_backup"
      - github_repo_list:
-         - "https://github.devops.worldpay.local/robops/Image_factory_linux_playbooks.git"
+         - "https://github.com/m1m2m3/Akshay.git"
          
     tasks:
     - name: delete old backups
