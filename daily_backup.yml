@@ -1,0 +1,17 @@
+---
+  - hosts: all
+    vars: 
+     - backup_path: "/git/github_backup"
+     - github_repo_list:
+         - "https://github.devops.worldpay.local/robops/Image_factory_linux_playbooks.git"
+         
+    tasks:
+    - name: delete old backups
+      shell: 
+        cmd: "rm -rf *"
+        chdir: "{{backup_path}}" 
+    - name: clone new updated repo
+      shell:  
+        cmd: "git clone {{item}}"  
+        chdir: "{{backup_path}}"
+      with_items: "{{github_repo_list}}" 
